@@ -24,7 +24,7 @@ version: 1.0.0
 Developing applications in the field of humanities sometimes means rendering a lot of textual data with regards to scientific rules (e.g. citation patterns).
 Especially digital editions can be very challenging.
 
-The following sections try to give an insight into the benefits of regression testing using the example of migrating a digital edition to a slightly different tech stack. In this scenario e2e testing is used to make sure that the new application displays the data after the migration exactly as it did before.
+The following sections try to give an insight into the benefits of regression testing using the example of migrating a digital edition[^1] to a slightly different tech stack. In this scenario e2e testing is used to make sure that the new application displays the data after the migration exactly as it did before.
 
 The tool of choice in this example is the [Playwright](https://playwright.dev/) framework, which allows us running multiple browser interactions and comparing the result to our test data. By parameterizing the tests we can speed up the development process and achieve high test coverage. The usefulness of setting up these tests becomes evident looking at the quantity and quality of the data in our use case.
 
@@ -147,11 +147,19 @@ A single test checking the correctness of a short info:
   3. Compares its content to the expected text.
 
   <Figure src="images/short_info_test_person.png">
-  Test steps for short info on person entity[^1]
+  Test steps for short info on person entity[^2]
   </Figure>
 
+In around 2 minutes 914 tests have been run, demonstrating the high efficiency of the provided setup.
+
+## Conclusion
+
+The provided resource demonstrated the use and benefits of e2e-testing in the field of digital humanities through the example of a digital edition.
+Integrating tests not only reduces development time drastically but also prevents regressions and builds a solid foundation for refactoring processes. 
+
 ---
-[^1]: the difference between 914 run tests and 899 annotations arises because a annotated string can refer to more than one entity.
+[^1]: [https://github.com/karl-kraus/wpn-static](https://github.com/karl-kraus/wpn-static)
+[^2]: the difference between 914 run tests and 899 annotations arises because a annotated string can refer to more than one entity.
 
  
 
